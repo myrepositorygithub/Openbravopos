@@ -7,7 +7,7 @@ package br.com.iskuertow.prideus.basic;
 
 /**
  *
- * @author Thiago
+ * @author Thiago Dias Gomes
  */
 public interface BasicTicket<E> {
 
