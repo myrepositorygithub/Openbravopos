@@ -5,14 +5,14 @@
  */
 package br.com.iskuertow.prideus.model;
 
-import br.com.iskuertow.prideus.basic.BasicBean;
+import br.com.iskuertow.prideus.basic.adapter.BeanAdapter;
 import java.io.Serializable;
 
 /**
  *
- * @author Thiago
+ * @author Thiago Dias Gomes
  */
-public class ProductBean implements BasicBean, Serializable {
+public class ProductBean extends BeanAdapter implements Serializable {
 
     private Long id;
 

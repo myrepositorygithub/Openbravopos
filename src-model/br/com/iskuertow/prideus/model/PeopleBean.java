@@ -5,7 +5,7 @@
  */
 package br.com.iskuertow.prideus.model;
 
-import br.com.iskuertow.prideus.basic.BasicBean;
+import br.com.iskuertow.prideus.basic.adapter.BeanAdapter;
 import java.awt.image.BufferedImage;
 import java.io.Serializable;
 
@@ -13,7 +13,7 @@ import java.io.Serializable;
  *
  * @author Thiago Dias Gomes
  */
-public class PeopleBean implements BasicBean, Serializable {
+public class PeopleBean extends BeanAdapter implements Serializable {
 
     private Long id;
     private String name;

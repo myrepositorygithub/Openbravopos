@@ -17,7 +17,7 @@ public interface BasicNfe {
 
     public abstract boolean signatureXML();
 
-    public abstract boolean sendNfe();
+    public abstract boolean submitNfe();
 
     public abstract boolean searchResultProcess();
 
