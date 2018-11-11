@@ -156,6 +156,12 @@ is divided into following sections:
                 <available file="${src-data.dir}"/>
                 <available file="${src-erp.dir}"/>
                 <available file="${src-pos.dir}"/>
+                <available file="${src.src-basic.dir}"/>
+                <available file="${src.src-control.dir}"/>
+                <available file="${src.src-dao.dir}"/>
+                <available file="${src.src-model.dir}"/>
+                <available file="${src.src-util.dir}"/>
+                <available file="${src.src-view.dir}"/>
             </or>
         </condition>
         <condition property="netbeans.home+have.tests">
@@ -264,6 +270,12 @@ is divided into following sections:
         <fail unless="src-data.dir">Must set src-data.dir</fail>
         <fail unless="src-erp.dir">Must set src-erp.dir</fail>
         <fail unless="src-pos.dir">Must set src-pos.dir</fail>
+        <fail unless="src.src-basic.dir">Must set src.src-basic.dir</fail>
+        <fail unless="src.src-control.dir">Must set src.src-control.dir</fail>
+        <fail unless="src.src-dao.dir">Must set src.src-dao.dir</fail>
+        <fail unless="src.src-model.dir">Must set src.src-model.dir</fail>
+        <fail unless="src.src-util.dir">Must set src.src-util.dir</fail>
+        <fail unless="src.src-view.dir">Must set src.src-view.dir</fail>
         <fail unless="build.dir">Must set build.dir</fail>
         <fail unless="dist.dir">Must set dist.dir</fail>
         <fail unless="build.classes.dir">Must set build.classes.dir</fail>
@@ -284,7 +296,7 @@ is divided into following sections:
     </target>
     <target depends="-init-ap-cmdline-properties" if="ap.supported.internal" name="-init-macrodef-javac-with-processors">
         <macrodef name="javac" uri="http://www.netbeans.org/ns/j2se-project/3">
-            <attribute default="${src.dir}:${reports.dir}:${src-beans.dir}:${src-data.dir}:${src-erp.dir}:${src-pos.dir}" name="srcdir"/>
+            <attribute default="${src.dir}:${reports.dir}:${src-beans.dir}:${src-data.dir}:${src-erp.dir}:${src-pos.dir}:${src.src-basic.dir}:${src.src-control.dir}:${src.src-dao.dir}:${src.src-model.dir}:${src.src-util.dir}:${src.src-view.dir}" name="srcdir"/>
             <attribute default="${build.classes.dir}" name="destdir"/>
             <attribute default="${javac.classpath}" name="classpath"/>
             <attribute default="${javac.processorpath}" name="processorpath"/>
@@ -325,7 +337,7 @@ is divided into following sections:
     </target>
     <target depends="-init-ap-cmdline-properties" name="-init-macrodef-javac-without-processors" unless="ap.supported.internal">
         <macrodef name="javac" uri="http://www.netbeans.org/ns/j2se-project/3">
-            <attribute default="${src.dir}:${reports.dir}:${src-beans.dir}:${src-data.dir}:${src-erp.dir}:${src-pos.dir}" name="srcdir"/>
+            <attribute default="${src.dir}:${reports.dir}:${src-beans.dir}:${src-data.dir}:${src-erp.dir}:${src-pos.dir}:${src.src-basic.dir}:${src.src-control.dir}:${src.src-dao.dir}:${src.src-model.dir}:${src.src-util.dir}:${src.src-view.dir}" name="srcdir"/>
             <attribute default="${build.classes.dir}" name="destdir"/>
             <attribute default="${javac.classpath}" name="classpath"/>
             <attribute default="${javac.processorpath}" name="processorpath"/>
@@ -358,7 +370,7 @@ is divided into following sections:
     </target>
     <target depends="-init-macrodef-javac-with-processors,-init-macrodef-javac-without-processors" name="-init-macrodef-javac">
         <macrodef name="depend" uri="http://www.netbeans.org/ns/j2se-project/3">
-            <attribute default="${src.dir}:${reports.dir}:${src-beans.dir}:${src-data.dir}:${src-erp.dir}:${src-pos.dir}" name="srcdir"/>
+            <attribute default="${src.dir}:${reports.dir}:${src-beans.dir}:${src-data.dir}:${src-erp.dir}:${src-pos.dir}:${src.src-basic.dir}:${src.src-control.dir}:${src.src-dao.dir}:${src.src-model.dir}:${src.src-util.dir}:${src.src-view.dir}" name="srcdir"/>
             <attribute default="${build.classes.dir}" name="destdir"/>
             <attribute default="${javac.classpath}" name="classpath"/>
             <sequential>
@@ -946,7 +958,7 @@ is divided into following sections:
                 <include name="*"/>
             </dirset>
         </pathconvert>
-        <j2seproject3:depend srcdir="${src.dir}:${reports.dir}:${src-beans.dir}:${src-data.dir}:${src-erp.dir}:${src-pos.dir}:${build.generated.subdirs}"/>
+        <j2seproject3:depend srcdir="${src.dir}:${reports.dir}:${src-beans.dir}:${src-data.dir}:${src-erp.dir}:${src-pos.dir}:${src.src-basic.dir}:${src.src-control.dir}:${src.src-dao.dir}:${src.src-model.dir}:${src.src-util.dir}:${src.src-view.dir}:${build.generated.subdirs}"/>
     </target>
     <target depends="init,deps-jar,-pre-pre-compile,-pre-compile, -copy-persistence-xml,-compile-depend" if="have.sources" name="-do-compile">
         <j2seproject3:javac gensrcdir="${build.generated.sources.dir}"/>
@@ -957,6 +969,12 @@ is divided into following sections:
             <fileset dir="${src-data.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
             <fileset dir="${src-erp.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
             <fileset dir="${src-pos.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${src.src-basic.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${src.src-control.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${src.src-dao.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${src.src-model.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${src.src-util.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
+            <fileset dir="${src.src-view.dir}" excludes="${build.classes.excludes},${excludes}" includes="${includes}"/>
         </copy>
     </target>
     <target if="has.persistence.xml" name="-copy-persistence-xml">
@@ -977,7 +995,7 @@ is divided into following sections:
     <target depends="init,deps-jar,-pre-pre-compile" name="-do-compile-single">
         <fail unless="javac.includes">Must select some files in the IDE or set javac.includes</fail>
         <j2seproject3:force-recompile/>
-        <j2seproject3:javac excludes="" gensrcdir="${build.generated.sources.dir}" includes="${javac.includes}" sourcepath="${src.dir}:${reports.dir}:${src-beans.dir}:${src-data.dir}:${src-erp.dir}:${src-pos.dir}"/>
+        <j2seproject3:javac excludes="" gensrcdir="${build.generated.sources.dir}" includes="${javac.includes}" sourcepath="${src.dir}:${reports.dir}:${src-beans.dir}:${src-data.dir}:${src-erp.dir}:${src-pos.dir}:${src.src-basic.dir}:${src.src-control.dir}:${src.src-dao.dir}:${src.src-model.dir}:${src.src-util.dir}:${src.src-view.dir}"/>
     </target>
     <target name="-post-compile-single">
         <!-- Empty placeholder for easier customization. -->
@@ -1261,6 +1279,24 @@ is divided into following sections:
             <fileset dir="${src-pos.dir}" excludes="${bug5101868workaround},${excludes}" includes="${includes}">
                 <filename name="**/*.java"/>
             </fileset>
+            <fileset dir="${src.src-basic.dir}" excludes="${bug5101868workaround},${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${src.src-control.dir}" excludes="${bug5101868workaround},${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${src.src-dao.dir}" excludes="${bug5101868workaround},${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${src.src-model.dir}" excludes="${bug5101868workaround},${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${src.src-util.dir}" excludes="${bug5101868workaround},${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
+            <fileset dir="${src.src-view.dir}" excludes="${bug5101868workaround},${excludes}" includes="${includes}">
+                <filename name="**/*.java"/>
+            </fileset>
             <fileset dir="${build.generated.sources.dir}" erroronmissingdir="false">
                 <include name="**/*.java"/>
                 <exclude name="*.java"/>
@@ -1284,6 +1320,24 @@ is divided into following sections:
                 <filename name="**/doc-files/**"/>
             </fileset>
             <fileset dir="${src-pos.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${src.src-basic.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${src.src-control.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${src.src-dao.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${src.src-model.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${src.src-util.dir}" excludes="${excludes}" includes="${includes}">
+                <filename name="**/doc-files/**"/>
+            </fileset>
+            <fileset dir="${src.src-view.dir}" excludes="${excludes}" includes="${includes}">
                 <filename name="**/doc-files/**"/>
             </fileset>
             <fileset dir="${build.generated.sources.dir}" erroronmissingdir="false">

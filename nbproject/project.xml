@@ -11,6 +11,12 @@
                 <root id="src-data.dir"/>
                 <root id="src-erp.dir"/>
                 <root id="src-pos.dir"/>
+                <root id="src.src-basic.dir"/>
+                <root id="src.src-control.dir"/>
+                <root id="src.src-dao.dir"/>
+                <root id="src.src-model.dir"/>
+                <root id="src.src-util.dir"/>
+                <root id="src.src-view.dir"/>
             </source-roots>
             <test-roots/>
         </data>

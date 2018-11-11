@@ -3,7 +3,28 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Thiago/Documents/NetBeansProjects/PrideusPDV/locales/pos_messages.properties</file>
+            <file>file:/C:/Projeta%20SI/PrideusPDV/src-dao/br/com/iskuertow/prideus/core/dao/AdapterDao.java</file>
+            <file>file:/C:/Projeta%20SI/PrideusPDV/src-pos/com/openbravo/pos/util/Hashcypher.java</file>
+            <file>file:/C:/Projeta%20SI/PrideusPDV/src-basic/br/com/iskuertow/prideus/basic/BasicBean.java</file>
+            <file>file:/C:/Projeta%20SI/PrideusPDV/src-basic/br/com/iskuertow/prideus/basic/BasicDao.java</file>
+            <file>file:/C:/Projeta%20SI/PrideusPDV/src-util/br/com/iskuertow/prideus/util/FileCopy.java</file>
+            <file>file:/C:/Projeta%20SI/PrideusPDV/src-data/com/openbravo/data/user/EditorRecord.java</file>
+            <file>file:/C:/Projeta%20SI/PrideusPDV/src-util/br/com/iskuertow/prideus/util/Zipper.java</file>
+            <file>file:/C:/Projeta%20SI/PrideusPDV/src-view/br/com/iskuertow/prideus/view/SelectorProductWiki.java</file>
+            <file>file:/C:/Projeta%20SI/PrideusPDV/src-pos/com/openbravo/pos/admin/PeoplePanel.java</file>
+            <file>file:/C:/Projeta%20SI/PrideusPDV/src-dao/br/com/iskuertow/prideus/core/factory/ConnectionFactory.java</file>
+            <file>file:/C:/Projeta%20SI/PrideusPDV/src-pos/com/openbravo/pos/config/JPanelConfigERP.java</file>
+            <file>file:/C:/Projeta%20SI/PrideusPDV/src-control/br/com/iskuertow/prideus/control/PeopleControl.java</file>
+            <file>file:/C:/Projeta%20SI/PrideusPDV/src-basic/br/com/iskuertow/prideus/basic/BasicTicket.java</file>
+            <file>file:/C:/Projeta%20SI/PrideusPDV/src-pos/com/openbravo/pos/config/JPanelConfigGeneral.java</file>
+            <file>file:/C:/Projeta%20SI/PrideusPDV/src-pos/com/openbravo/pos/admin/PeopleView.java</file>
+            <file>file:/C:/Projeta%20SI/PrideusPDV/src-util/br/com/iskuertow/prideus/util/Unzip.java</file>
+            <file>file:/C:/Projeta%20SI/PrideusPDV/src-util/br/com/iskuertow/prideus/util/Mkdir.java</file>
+            <file>file:/C:/Projeta%20SI/PrideusPDV/src-util/br/com/iskuertow/prideus/util/Mkdirs.java</file>
+            <file>file:/C:/Projeta%20SI/PrideusPDV/src-model/br/com/iskuertow/prideus/model/ProductBean.java</file>
+            <file>file:/C:/Projeta%20SI/PrideusPDV/src-pos/com/openbravo/pos/config/JPanelConfiguration.java</file>
+            <file>file:/C:/Projeta%20SI/PrideusPDV/src-util/br/com/iskuertow/prideus/util/DeleteDir.java</file>
+            <file>file:/C:/Projeta%20SI/PrideusPDV/src-model/br/com/iskuertow/prideus/model/PeopleBean.java</file>
         </group>
     </open-files>
 </project-private>
