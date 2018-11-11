@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.iskuertow.prideus.admin;
+package br.com.iskuertow.prideus.model;
 
 import br.com.iskuertow.prideus.basic.BasicBean;
 import java.awt.image.BufferedImage;
@@ -13,19 +13,19 @@ import java.io.Serializable;
  *
  * @author Thiago Dias Gomes
  */
-public class PeopleInfo implements BasicBean, Serializable {
+public class PeopleBean implements BasicBean, Serializable {
 
     private Long id;
     private String name;
     private Long card;
-    private RoleInfo roleInfo;
+    private RoleBean roleInfo;
     private boolean visible;
     private BufferedImage image;
 
-    public PeopleInfo() {
+    public PeopleBean() {
     }
 
-    public PeopleInfo(Long id, String name, Long card, RoleInfo roleInfo, boolean visible, BufferedImage image) {
+    public PeopleBean(Long id, String name, Long card, RoleBean roleInfo, boolean visible, BufferedImage image) {
         this.id = id;
         this.name = name;
         this.card = card;
@@ -59,12 +59,12 @@ public class PeopleInfo implements BasicBean, Serializable {
         this.card = card;
     }
 
-    public RoleInfo getRoleInfo() {
+    public RoleBean getRoleInfo() {
         return roleInfo;
     }
 
-    public void setRoleInfo(RoleInfo roleInfo) {
-        this.roleInfo = roleInfo;
+    public void setRoleInfo(RoleBean roleBean) {
+        this.roleInfo = roleBean;
     }
 
     public boolean isVisible() {

@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.iskuertow.prideus.admin;
+package br.com.iskuertow.prideus.core.factory;
 
 /**
  *
- * @author Thiago
+ * @author Thiago Dias Gomes
  */
-public class RoleInfo {
+public class ConnectionFactory {
     
 }
