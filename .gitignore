@@ -2,3 +2,5 @@
 /dist/
 /nbproject/
 derby\.log
+
+*.class
