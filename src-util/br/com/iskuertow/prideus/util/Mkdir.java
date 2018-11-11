@@ -3,12 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.iskuertow.prideus.view;
+package br.com.iskuertow.prideus.util;
+
+import java.io.File;
 
 /**
  *
  * @author Thiago
  */
-public class teste {
-    
+public class Mkdir {
+
+    public static boolean mkDir(File file) {
+        return file.mkdir();
+    }
 }
