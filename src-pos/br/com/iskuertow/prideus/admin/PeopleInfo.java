@@ -7,12 +7,13 @@ package br.com.iskuertow.prideus.admin;
 
 import br.com.iskuertow.prideus.basic.BasicBean;
 import java.awt.image.BufferedImage;
+import java.io.Serializable;
 
 /**
  *
  * @author Thiago Dias Gomes
  */
-public class PeopleInfo implements BasicBean {
+public class PeopleInfo implements BasicBean, Serializable {
 
     private Long id;
     private String name;
