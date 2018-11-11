@@ -26,4 +26,6 @@ public interface BasicTicket<E> {
     public abstract boolean export();
     
     public abstract boolean calc(E e);
+    
+    
 }
