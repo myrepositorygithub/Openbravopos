@@ -5,6 +5,7 @@
  */
 package br.com.iskuertow.prideus.core.dao;
 
+import br.com.iskuertow.prideus.basic.BasicDao;
 import java.util.List;
 
 /**
