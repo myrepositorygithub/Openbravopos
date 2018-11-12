@@ -18,6 +18,17 @@ import java.util.List;
  */
 public class PostgreSQLRestore extends BackupAdapter {
 
+    /**
+     *  <p>Metodo de dump postgresql, e necessario passar os parametros correto para funcionar corretamente.<p>
+     * @param path
+     * @param host
+     * @param port
+     * @param user
+     * @param password
+     * @param bd
+     * @param dumpToRestore
+     * @return 
+     */
     @Override
     public boolean restore(String path, String host, String port, String user, String password, String bd, String dumpToRestore) {
         return createTask(path, host, port, user, password, bd, dumpToRestore);
