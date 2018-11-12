@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.iskuertow.prideus.view;
+package br.com.iskuertow.prideus.view.domain;
 
 import br.com.iskuertow.prideus.basic.BasicApp;
 import br.com.iskuertow.prideus.basic.BasicProperties;
