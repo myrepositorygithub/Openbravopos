@@ -5,20 +5,13 @@
  */
 package br.com.iskuertow.prideus.basic;
 
-import java.io.File;
-
 /**
  *
  * @author Thiago Dias Gomes
  */
 public interface BasicBackup {
 
-    public abstract boolean newBackup();
+    public abstract boolean newBackup(String path, String host, String port, String user, String password, String bd, String destiny);
 
-    public abstract boolean restore(final File file);
-
-    public abstract boolean checkBackup(final File backup);
-
-    public abstract boolean toCleanDataBase();
-
+    public abstract boolean restore(String path, String host, String port, String user, String password, String bd, String dumpToRestore);
 }

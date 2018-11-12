@@ -6,7 +6,6 @@
 package br.com.iskuertow.prideus.basic.adapter;
 
 import br.com.iskuertow.prideus.basic.BasicBackup;
-import java.io.File;
 
 /**
  *
@@ -15,22 +14,12 @@ import java.io.File;
 public class BackupAdapter implements BasicBackup{
 
     @Override
-    public boolean newBackup() {
+    public boolean newBackup(String path, String host, String port, String user, String password, String bd, String destiny) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean restore(File file) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean checkBackup(File backup) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public boolean toCleanDataBase() {
+    public boolean restore(String path, String host, String port, String user, String password, String bd, String dumpToRestore) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
