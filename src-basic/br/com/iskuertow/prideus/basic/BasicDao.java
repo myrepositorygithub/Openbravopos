@@ -20,6 +20,8 @@ public interface BasicDao<E> {
 
     public abstract List<E> findAll();
 
+    public abstract List<E> find(Long maxResult);
+
     public abstract E find(Object key);
 
     public abstract E find(Object... key);

@@ -5,43 +5,49 @@
  */
 package br.com.iskuertow.prideus.basic.adapter;
 
-import br.com.iskuertow.prideus.basic.BasicDao;
-import java.util.List;
+import br.com.iskuertow.prideus.basic.BasicJasperLegacyInputStream;
+import java.io.InputStream;
+import org.w3c.dom.Document;
 
 /**
  *
  * @author Thiago Dias Gomes
  */
-public class DaoAdapter<E> implements BasicDao<E> {
+public class JasperLegacyInputStreamAdapter implements BasicJasperLegacyInputStream{
 
     @Override
-    public boolean save(E e) {
+    public InputStream convertToLegacyFormat(InputStream is) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public boolean remove(E e) {
+    public String removeDataTag(String source, String tag, String attr) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<E> findAll() {
+    public String replaceTagTitle(String source, String tag, String oldAttr, String newAttr) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public E find(Object key) {
+    public String addAttributeInTag(String source, String tag, String attr) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public E find(Object... key) {
+    public Document convertInputStreamToDOM(InputStream is) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<E> find(Long maxResult) {
+    public String addDocTypeAndConvertDOMToString(Document document) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    @Override
+    public InputStream convertStringToInputStream(String template) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
 }
