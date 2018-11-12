@@ -12,7 +12,7 @@ import java.io.IOException;
  *
  * @author Thiago Dias Gomes
  */
-public interface BasicConfig extends BasicProperties{
+public interface BasicConfig{
 
     public abstract void init(File configfile);
 

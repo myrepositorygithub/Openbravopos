@@ -5,6 +5,7 @@
  */
 package br.com.iskuertow.prideus.basic.task;
 
+import br.com.iskuertow.prideus.basic.BasicProperties;
 import br.com.iskuertow.prideus.basic.adapter.ConfigAdapter;
 import com.openbravo.pos.forms.AppLocal;
 import java.io.File;
@@ -20,7 +21,7 @@ import java.util.Properties;
  *
  * @author Thiago Dias Gomes
  */
-public final class AppConfig extends ConfigAdapter {
+public final class AppConfig extends ConfigAdapter implements BasicProperties{
 
     private Properties m_propsconfig;
     private File configfile;

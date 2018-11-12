@@ -5,17 +5,14 @@
  */
 package br.com.iskuertow.prideus.basic;
 
-import java.io.File;
+import java.rmi.Remote;
+import java.rmi.RemoteException;
 
 /**
  *
- * @author Thiago Dias Gomes
+ * @author Thiago
  */
-public interface BasicProperties {
+public interface BasicAppMessage extends Remote {
 
-    public abstract File getConfigFile();
-
-    public abstract String getHost();
-
-    public abstract String getProperty(String key);
+    public void restoreWindow() throws RemoteException;
 }

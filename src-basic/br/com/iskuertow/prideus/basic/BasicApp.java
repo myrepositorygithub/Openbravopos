@@ -5,17 +5,11 @@
  */
 package br.com.iskuertow.prideus.basic;
 
-import java.io.File;
-
 /**
  *
- * @author Thiago Dias Gomes
+ * @author Thiago
  */
-public interface BasicProperties {
+public interface BasicApp {
 
-    public abstract File getConfigFile();
-
-    public abstract String getHost();
-
-    public abstract String getProperty(String key);
+    public abstract boolean initApp(BasicProperties basicProperties);
 }

@@ -5,18 +5,12 @@
  */
 package br.com.iskuertow.prideus.basic;
 
-import java.rmi.Remote;
-import java.rmi.RemoteException;
-
 /**
  *
  * @author Thiago Dias Gomes
  */
-public interface BasicInit extends Remote {
+public interface BasicInit{
 
-    public abstract boolean loadConfig(String[] args);
+    public abstract void loadConfig(String[] args);
 
-    public abstract void instanceCheck();
-
-    public void restoreWindow() throws RemoteException;
 }
