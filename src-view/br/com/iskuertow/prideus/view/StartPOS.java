@@ -7,6 +7,7 @@ package br.com.iskuertow.prideus.view;
 
 import br.com.iskuertow.prideus.basic.BasicScreenModeEnum;
 import static br.com.iskuertow.prideus.basic.BasicScreenModeEnum.FULL_SCREEN;
+import static br.com.iskuertow.prideus.basic.BasicScreenModeEnum.getScreenMode;
 import br.com.iskuertow.prideus.basic.adapter.InitAdapter;
 import br.com.iskuertow.prideus.basic.task.AppConfig;
 
@@ -31,7 +32,7 @@ public class StartPOS extends InitAdapter {
         AppConfig config = new AppConfig(args);
         config.load();
         
-        switch (BasicScreenModeEnum.getScreenMode(config.getProperty("machine.screenmode"))) {
+        switch (getScreenMode(config.getProperty("machine.screenmode"))) {
             case FULL_SCREEN:
                 JRootKiosk rootkiosk = new JRootKiosk();
                 rootkiosk.initFrame(config);
