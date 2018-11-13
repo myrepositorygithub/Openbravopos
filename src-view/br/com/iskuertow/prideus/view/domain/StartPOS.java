@@ -5,7 +5,6 @@
  */
 package br.com.iskuertow.prideus.view.domain;
 
-import br.com.iskuertow.prideus.basic.BasicScreenModeEnum;
 import static br.com.iskuertow.prideus.basic.BasicScreenModeEnum.FULL_SCREEN;
 import static br.com.iskuertow.prideus.basic.BasicScreenModeEnum.getScreenMode;
 import br.com.iskuertow.prideus.basic.adapter.InitAdapter;

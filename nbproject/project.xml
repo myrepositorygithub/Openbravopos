@@ -18,7 +18,9 @@
                 <root id="src.src-util.dir"/>
                 <root id="src.src-view.dir"/>
             </source-roots>
-            <test-roots/>
+            <test-roots>
+                <root id="test.src-test.dir"/>
+            </test-roots>
         </data>
         <libraries xmlns="http://www.netbeans.org/ns/ant-project-libraries/1">
             <definitions>.\lib\nblibraries.properties</definitions>
