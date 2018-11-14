@@ -9,6 +9,7 @@ import static br.com.iskuertow.prideus.basic.BasicScreenModeEnum.FULL_SCREEN;
 import static br.com.iskuertow.prideus.basic.BasicScreenModeEnum.getScreenMode;
 import br.com.iskuertow.prideus.basic.adapter.InitAdapter;
 import br.com.iskuertow.prideus.basic.task.AppConfig;
+import com.openbravo.pos.forms.JRootKiosk;
 
 /**
  *
@@ -33,12 +34,10 @@ public class StartPOS extends InitAdapter {
         
         switch (getScreenMode(config.getProperty("machine.screenmode"))) {
             case FULL_SCREEN:
-                JRootKiosk rootkiosk = new JRootKiosk();
-                rootkiosk.initFrame(config);
+
                 break;
             case WINDOW:
-                JRootFrame rootframe = new JRootFrame();
-                rootframe.initFrame(config);
+                
                 break;
             default:
                 //TODO
