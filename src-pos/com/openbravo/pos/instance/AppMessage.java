@@ -16,9 +16,9 @@
 //
 //    You should have received a copy of the GNU General Public License
 //    along with Openbravo POS.  If not, see <http://www.gnu.org/licenses/>.
-
 package com.openbravo.pos.instance;
 
+import com.openbravo.pos.forms.AppProperties;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
@@ -27,6 +27,8 @@ import java.rmi.RemoteException;
  * @author adrianromero
  */
 public interface AppMessage extends Remote {
-    
-    public void restoreWindow() throws RemoteException;    
+
+    public void restoreWindow() throws RemoteException;
+
+    public void initFrame(AppProperties props);
 }

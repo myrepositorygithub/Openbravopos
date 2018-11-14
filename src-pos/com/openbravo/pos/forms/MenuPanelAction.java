@@ -19,6 +19,7 @@
 
 package com.openbravo.pos.forms;
 
+import br.com.iskuertow.prideus.view.domain.JPrincipalApp;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.Action;

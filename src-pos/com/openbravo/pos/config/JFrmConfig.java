@@ -19,6 +19,7 @@
 
 package com.openbravo.pos.config;
 
+import br.com.iskuertow.prideus.view.domain.JRootFrame;
 import java.awt.*;
 import java.awt.event.*;
 import com.openbravo.basic.BasicException;

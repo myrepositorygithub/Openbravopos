@@ -5,12 +5,17 @@
  */
 package br.com.iskuertow.prideus.basic;
 
+import com.openbravo.pos.forms.AppConfig;
+
 /**
  *
  * @author Thiago Dias Gomes
  */
-public interface BasicInit{
+public interface BasicInit {
 
-    public abstract void loadConfig(String[] args);
+    public abstract void loadConfig(String[] args,AppConfig config);
 
+    public abstract boolean registerApp();
+
+    public abstract void display(AppConfig appConfig);
 }

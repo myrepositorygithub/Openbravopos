@@ -17,7 +17,7 @@
 //    You should have received a copy of the GNU General Public License
 //    along with Openbravo POS.  If not, see <http://www.gnu.org/licenses/>.
 
-package com.openbravo.pos.forms;
+package br.com.iskuertow.prideus.view.domain;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -40,6 +40,18 @@ import com.openbravo.data.gui.JMessageDialog;
 import com.openbravo.data.loader.BatchSentence;
 import com.openbravo.data.loader.BatchSentenceResource;
 import com.openbravo.data.loader.Session;
+import com.openbravo.pos.forms.AppLocal;
+import com.openbravo.pos.forms.AppProperties;
+import com.openbravo.pos.forms.AppUser;
+import com.openbravo.pos.forms.AppUserView;
+import com.openbravo.pos.forms.AppView;
+import com.openbravo.pos.forms.AppViewConnection;
+import com.openbravo.pos.forms.BeanFactory;
+import com.openbravo.pos.forms.BeanFactoryApp;
+import com.openbravo.pos.forms.BeanFactoryException;
+import com.openbravo.pos.forms.BeanFactoryObj;
+import com.openbravo.pos.forms.BeanFactoryScript;
+import com.openbravo.pos.forms.DataLogicSystem;
 import com.openbravo.pos.scale.DeviceScale;
 import com.openbravo.pos.scanpal2.DeviceScanner;
 import com.openbravo.pos.scanpal2.DeviceScannerFactory;
@@ -613,40 +625,38 @@ public class JRootApp extends JPanel implements AppView {
 
         m_jPanelLogin.setLayout(new java.awt.BorderLayout());
 
-        jPanel4.setLayout(new javax.swing.BoxLayout(jPanel4, javax.swing.BoxLayout.Y_AXIS));
+        jPanel4.setLayout(new java.awt.BorderLayout(10, 0));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/logo.png"))); // NOI18N
-        jLabel1.setText("<html><center>Openbravo POS is a point of sale application designed for touch screens.<br>" +
+        jLabel1.setBackground(new java.awt.Color(254, 254, 254));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/logo.png")));
+        jLabel1.setText("<html><center>Openbravo POS \u00E9 um sistema de ponto de venda projetado para touch screens.<br>" +
             "Copyright \u00A9 2007-2009 Openbravo, S.L.<br>" +
-            "http://www.openbravo.com/product/pos<br>" +
-            "<br>" +
-            "Openbravo POS is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.<br>" +
-            "<br>" +
-            "Openbravo POS is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.<br>" +
-            "<br>" +
-            "You should have received a copy of the GNU General Public License along with Openbravo POS.  If not, see http://www.gnu.org/licenses/.<br>" +
+            "http://www.openbravo.com/product/pos <br>" +
+            "Licen\u00E7a dispon\u00EDvel em http://www.gnu.org/licenses" +
             "</center>");
         jLabel1.setAlignmentX(0.5F);
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel1.setMaximumSize(new java.awt.Dimension(800, 1024));
         jLabel1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jPanel4.add(jLabel1);
+        jPanel4.add(jLabel1, java.awt.BorderLayout.NORTH);
 
-        m_jPanelLogin.add(jPanel4, java.awt.BorderLayout.CENTER);
+        jPanel5.setPreferredSize(new java.awt.Dimension(730, 200));
+        jPanel5.setLayout(new javax.swing.BoxLayout(jPanel5, javax.swing.BoxLayout.LINE_AXIS));
 
         m_jLogonName.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 5, 5));
+        m_jLogonName.setMinimumSize(new java.awt.Dimension(200, 42));
+        m_jLogonName.setPreferredSize(new java.awt.Dimension(720, 128));
         m_jLogonName.setLayout(new java.awt.BorderLayout());
 
         jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(510, 118));
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(520, 180));
         m_jLogonName.add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 5, 0, 5));
         jPanel2.setLayout(new java.awt.BorderLayout());
-
-        jPanel8.setLayout(new java.awt.GridLayout(0, 1, 5, 5));
 
         m_jClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/exit.png"))); // NOI18N
         m_jClose.setText(AppLocal.getIntString("Button.Close")); // NOI18N
@@ -661,7 +671,7 @@ public class JRootApp extends JPanel implements AppView {
         });
         jPanel8.add(m_jClose);
 
-        jPanel2.add(jPanel8, java.awt.BorderLayout.NORTH);
+        jPanel2.add(jPanel8, java.awt.BorderLayout.EAST);
 
         jPanel1.setLayout(null);
 
@@ -676,11 +686,13 @@ public class JRootApp extends JPanel implements AppView {
 
         jPanel2.add(jPanel1, java.awt.BorderLayout.CENTER);
 
-        m_jLogonName.add(jPanel2, java.awt.BorderLayout.LINE_END);
+        m_jLogonName.add(jPanel2, java.awt.BorderLayout.NORTH);
 
         jPanel5.add(m_jLogonName);
 
-        m_jPanelLogin.add(jPanel5, java.awt.BorderLayout.SOUTH);
+        jPanel4.add(jPanel5, java.awt.BorderLayout.CENTER);
+
+        m_jPanelLogin.add(jPanel4, java.awt.BorderLayout.CENTER);
 
         m_jPanelContainer.add(m_jPanelLogin, "login");
 
@@ -699,20 +711,15 @@ public class JRootApp extends JPanel implements AppView {
         add(m_jPanelDown, java.awt.BorderLayout.SOUTH);
     }// </editor-fold>//GEN-END:initComponents
 
-
     private void m_jCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_m_jCloseActionPerformed
-
         tryToClose();
-        
     }//GEN-LAST:event_m_jCloseActionPerformed
 
     private void m_txtKeysKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_m_txtKeysKeyTyped
-
         m_txtKeys.setText("0");
-        
         processKey(evt.getKeyChar());
-
     }//GEN-LAST:event_m_txtKeysKeyTyped
+
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

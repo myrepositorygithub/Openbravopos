@@ -17,7 +17,7 @@
 //    You should have received a copy of the GNU General Public License
 //    along with Openbravo POS.  If not, see <http://www.gnu.org/licenses/>.
 
-package com.openbravo.pos.forms;
+package br.com.iskuertow.prideus.view.domain;
 
 import com.openbravo.basic.BasicException;
 
@@ -31,6 +31,18 @@ import javax.swing.*;
 import com.openbravo.beans.RoundedBorder;
 import com.openbravo.data.gui.MessageInf;
 import com.openbravo.data.gui.JMessageDialog;
+import com.openbravo.pos.forms.AppLocal;
+import com.openbravo.pos.forms.AppUser;
+import com.openbravo.pos.forms.AppUserView;
+import com.openbravo.pos.forms.BeanFactoryException;
+import com.openbravo.pos.forms.DataLogicSystem;
+import com.openbravo.pos.forms.JPanelMenu;
+import com.openbravo.pos.forms.JPanelNull;
+import com.openbravo.pos.forms.JPanelView;
+import com.openbravo.pos.forms.MenuDefinition;
+import com.openbravo.pos.forms.MenuExecAction;
+import com.openbravo.pos.forms.MenuPanelAction;
+import com.openbravo.pos.forms.ProcessAction;
 import com.openbravo.pos.scripting.ScriptEngine;
 import com.openbravo.pos.scripting.ScriptException;
 import com.openbravo.pos.scripting.ScriptFactory;

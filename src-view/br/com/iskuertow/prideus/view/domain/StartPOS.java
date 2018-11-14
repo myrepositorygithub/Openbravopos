@@ -8,8 +8,13 @@ package br.com.iskuertow.prideus.view.domain;
 import static br.com.iskuertow.prideus.basic.BasicScreenModeEnum.FULL_SCREEN;
 import static br.com.iskuertow.prideus.basic.BasicScreenModeEnum.getScreenMode;
 import br.com.iskuertow.prideus.basic.adapter.InitAdapter;
-import br.com.iskuertow.prideus.basic.task.AppConfig;
-import com.openbravo.pos.forms.JRootKiosk;
+import com.openbravo.format.Formats;
+import com.openbravo.pos.forms.AppConfig;
+import com.openbravo.pos.instance.InstanceQuery;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.util.Locale;
+import java.util.logging.Logger;
 
 /**
  *
@@ -17,32 +22,74 @@ import com.openbravo.pos.forms.JRootKiosk;
  */
 public class StartPOS extends InitAdapter {
 
+    private static final Logger LOGGER = Logger.getLogger("com.openbravo.pos.forms.StartPOS");
+
+    private InstanceQuery instanceQuery = null;
+
     public static void main(String[] args) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                StartPOS oS = new StartPOS();
-                oS.loadConfig(args);
+        java.awt.EventQueue.invokeLater(() -> {
+            StartPOS oS = new StartPOS();
+            if (!oS.registerApp()) {
+                System.exit(0);
             }
+            
+            AppConfig config = new AppConfig(args);
+            config.load();
+            oS.loadConfig(args, config);
+            oS.display(config);
         });
     }
 
     @Override
-    public void loadConfig(String[] args) {
-        AppConfig config = new AppConfig(args);
-        config.load();
-        
-        switch (getScreenMode(config.getProperty("machine.screenmode"))) {
-            case FULL_SCREEN:
+    public boolean registerApp() {
+        try {
+            instanceQuery = new InstanceQuery();
+            instanceQuery.getAppMessage().restoreWindow();
+            return false;
+        } catch (NotBoundException | RemoteException e) {
+            return true;
+        }
+    }
 
-                break;
-            case WINDOW:
-                
-                break;
-            default:
-                //TODO
+    @Override
+    public void loadConfig(String[] args, AppConfig config) {
+
+        // set Locale.
+        String slang = config.getProperty("user.language");
+        String scountry = config.getProperty("user.country");
+        String svariant = config.getProperty("user.variant");
+        if (slang != null && !slang.equals("") && scountry != null && svariant != null) {
+            Locale.setDefault(new Locale(slang, scountry, svariant));
         }
 
+        // Set the format patterns
+        Formats.setIntegerPattern(config.getProperty("format.integer"));
+        Formats.setDoublePattern(config.getProperty("format.double"));
+        Formats.setCurrencyPattern(config.getProperty("format.currency"));
+        Formats.setPercentPattern(config.getProperty("format.percent"));
+        Formats.setDatePattern(config.getProperty("format.date"));
+        Formats.setTimePattern(config.getProperty("format.time"));
+        Formats.setDateTimePattern(config.getProperty("format.datetime"));
+//
+        
+    }
+
+    @Override
+    public void display(AppConfig appConfig) {
+        switch (getScreenMode(appConfig.getProperty("machine.screenmode"))) {
+            case FULL_SCREEN:
+                JRootKiosk rootkiosk = new JRootKiosk();
+                rootkiosk.initFrame(appConfig);
+                rootkiosk.setVisible(true);
+                break;
+            case WINDOW:
+                JRootFrame rootframe = new JRootFrame();
+                rootframe.initFrame(appConfig);
+                rootframe.setVisible(true); 
+                break;
+            default:
+            //TODO
+        }
     }
 
 }
