@@ -18,7 +18,7 @@ public class EntityManagerService {
     }
 
     private EntityManagerService() {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("PrideusPDVPU");
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("PrideusPU");
         em = emf.createEntityManager();
 
     }

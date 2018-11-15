@@ -5,6 +5,9 @@
  */
 package br.com.iskuertow.prideus.view;
 
+import br.com.iskuertow.prideus.util.OperationalSystem;
+import java.util.Properties;
+
 /**
  *
  * @author Thiago
@@ -15,7 +18,8 @@ public class NewMain {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+       
+       
     }
     
 }
