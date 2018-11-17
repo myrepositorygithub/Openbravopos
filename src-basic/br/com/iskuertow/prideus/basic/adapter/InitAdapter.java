@@ -28,4 +28,9 @@ public class InitAdapter implements BasicInit {
     public void display(AppConfig appConfig) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public void setSkin(AppConfig appConfig) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

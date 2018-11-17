@@ -13,9 +13,11 @@ import com.openbravo.pos.forms.AppConfig;
  */
 public interface BasicInit {
 
-    public abstract void loadConfig(String[] args,AppConfig config);
+    public abstract void loadConfig(String[] args, AppConfig config);
 
     public abstract boolean registerApp();
 
     public abstract void display(AppConfig appConfig);
+
+    public abstract void setSkin(AppConfig appConfig);
 }

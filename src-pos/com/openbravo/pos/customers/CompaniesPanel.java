@@ -36,19 +36,19 @@ import javax.swing.ListCellRenderer;
  *
  * @author adrianromero
  */
-public class CustomersPanel extends JPanelTable {
+public class CompaniesPanel extends JPanelTable {
     
     private TableDefinition tcustomers;
-    private CustomersView jeditor;
+    private CompaniesView jeditor;
     
     /** Creates a new instance of CustomersPanel */
-    public CustomersPanel() {    
+    public CompaniesPanel() {    
     }
     
     protected void init() {        
         DataLogicCustomers dlCustomers  = (DataLogicCustomers) app.getBean("com.openbravo.pos.customers.DataLogicCustomers");
         tcustomers = dlCustomers.getTableCustomers();        
-        jeditor = new CustomersView(app, dirty);    
+        jeditor = new CompaniesView(app, dirty);    
     }
     
     @Override
@@ -86,6 +86,6 @@ public class CustomersPanel extends JPanelTable {
     }       
     
     public String getTitle() {
-        return AppLocal.getIntString("Menu.CustomerSupplierManagement");
+        return AppLocal.getIntString("Menu.CompanyManagement");
     }    
 }
