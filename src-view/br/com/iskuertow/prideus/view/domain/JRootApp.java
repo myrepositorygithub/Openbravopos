@@ -630,7 +630,7 @@ public class JRootApp extends JPanel implements AppView {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setBackground(new java.awt.Color(254, 254, 254));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/logo.png")));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/logoPadrao.png")));
         jLabel1.setText("<html><center>Openbravo POS \u00E9 um sistema de ponto de venda projetado para touch screens.<br>" +
             "Copyright \u00A9 2007-2009 Openbravo, S.L.<br>" +
             "http://www.openbravo.com/product/pos <br>" +
