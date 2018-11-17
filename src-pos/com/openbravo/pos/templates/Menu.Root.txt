@@ -20,7 +20,11 @@
     //VENDAS
     group = menu.addGroup("Menu.Ticket");
     group.addPanel("/com/openbravo/images/simple.png", "Menu.Ticket", "com.openbravo.pos.sales.JPanelTicketSales");
-
+    
+    //MOVIMENTO DIARIO
+    group = menu.addGroup("Menu.StockMovementDiary");
+    group.addPanel("/com/openbravo/images/stockmovement.png", "Menu.StockMovement", "com.openbravo.pos.inventory.StockManagement");
+    
     //CAIXA
     group = menu.addGroup("Menu.Cash");
     group.addPanel("/com/openbravo/images/editsales.png", "Menu.TicketEdit", "com.openbravo.pos.sales.JPanelTicketEdits");
