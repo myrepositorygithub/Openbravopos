@@ -39,13 +39,10 @@ public class JPanelConfigDatabase extends javax.swing.JPanel implements PanelCon
         
         initComponents();
         
-        jtxtDbDriverLib.getDocument().addDocumentListener(dirty);
-        jtxtDbDriver.getDocument().addDocumentListener(dirty);
         jtxtDbURL.getDocument().addDocumentListener(dirty);
         jtxtDbPassword.getDocument().addDocumentListener(dirty);
         jtxtDbUser.getDocument().addDocumentListener(dirty);
          
-        jbtnDbDriverLib.addActionListener(new DirectoryEvent(jtxtDbDriverLib));
     }
     
     public boolean hasChanged() {
@@ -57,9 +54,6 @@ public class JPanelConfigDatabase extends javax.swing.JPanel implements PanelCon
     }
    
     public void loadProperties(AppConfig config) {
-        
-        jtxtDbDriverLib.setText(config.getProperty("db.driverlib"));
-        jtxtDbDriver.setText(config.getProperty("db.driver"));
         jtxtDbURL.setText(config.getProperty("db.URL"));
         
         String sDBUser = config.getProperty("db.user");
@@ -77,8 +71,6 @@ public class JPanelConfigDatabase extends javax.swing.JPanel implements PanelCon
    
     public void saveProperties(AppConfig config) {
         
-        config.setProperty("db.driverlib", jtxtDbDriverLib.getText());
-        config.setProperty("db.driver", jtxtDbDriver.getText());
         config.setProperty("db.URL", jtxtDbURL.getText());
         config.setProperty("db.user", jtxtDbUser.getText());
         AltEncrypter cypher = new AltEncrypter("cypherkey" + jtxtDbUser.getText());       
@@ -96,11 +88,6 @@ public class JPanelConfigDatabase extends javax.swing.JPanel implements PanelCon
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
-        jtxtDbDriverLib = new javax.swing.JTextField();
-        jbtnDbDriverLib = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jtxtDbDriver = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jtxtDbURL = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -109,12 +96,6 @@ public class JPanelConfigDatabase extends javax.swing.JPanel implements PanelCon
         jtxtDbPassword = new javax.swing.JPasswordField();
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(AppLocal.getIntString("Label.Database"))); // NOI18N
-
-        jLabel18.setText(AppLocal.getIntString("label.dbdriverlib")); // NOI18N
-
-        jbtnDbDriverLib.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/openbravo/images/fileopen.png"))); // NOI18N
-
-        jLabel1.setText(AppLocal.getIntString("Label.DbDriver")); // NOI18N
 
         jLabel2.setText(AppLocal.getIntString("Label.DbURL")); // NOI18N
 
@@ -129,39 +110,20 @@ public class JPanelConfigDatabase extends javax.swing.JPanel implements PanelCon
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(87, 87, 87)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jtxtDbURL, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtxtDbDriverLib, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jtxtDbDriver, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jbtnDbDriverLib))
+                    .addComponent(jtxtDbURL, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtxtDbPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jtxtDbUser, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addContainerGap(187, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel18)
-                            .addComponent(jtxtDbDriverLib, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jtxtDbDriver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jbtnDbDriverLib))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jtxtDbURL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -173,7 +135,7 @@ public class JPanelConfigDatabase extends javax.swing.JPanel implements PanelCon
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jtxtDbPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -190,21 +152,16 @@ public class JPanelConfigDatabase extends javax.swing.JPanel implements PanelCon
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JButton jbtnDbDriverLib;
-    private javax.swing.JTextField jtxtDbDriver;
-    private javax.swing.JTextField jtxtDbDriverLib;
     private javax.swing.JPasswordField jtxtDbPassword;
     private javax.swing.JTextField jtxtDbURL;
     private javax.swing.JTextField jtxtDbUser;

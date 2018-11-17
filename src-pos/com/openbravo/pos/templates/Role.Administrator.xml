@@ -46,6 +46,8 @@
     <class name="com.openbravo.pos.customers.CustomersPanel"/>
     <class name="com.openbravo.pos.customers.CompaniesPanel"/>
     <class name="com.openbravo.pos.forms.MenuUserManagement"/>
+    <class name="com.openbravo.pos.forms.MenuProductManagement"/>
+    <class name="com.openbravo.pos.forms.MenuReportManagement"/>
     <class name="com.openbravo.pos.forms.Menu.Registration"/>
     <class name="com.openbravo.pos.forms.MenuCustomersManagement"/>
     <class name="/com/openbravo/reports/customers.bs"/>

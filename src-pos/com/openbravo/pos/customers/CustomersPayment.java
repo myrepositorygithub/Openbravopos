@@ -87,7 +87,7 @@ public class CustomersPayment extends javax.swing.JPanel implements JPanelView, 
     }
 
     public String getTitle() {
-        return AppLocal.getIntString("Menu.CustomersPayment");
+        return AppLocal.getIntString("Menu.Payments");
     }
 
     public void activate() throws BasicException {

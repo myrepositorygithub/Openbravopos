@@ -16,14 +16,17 @@
 //
 //    You should have received a copy of the GNU General Public License
 //    along with Openbravo POS.  If not, see <http://www.gnu.org/licenses/>.
+    
+    //VENDAS
+    group = menu.addGroup("Menu.Ticket");
+    group.addPanel("/com/openbravo/images/simple.png", "Menu.Ticket", "com.openbravo.pos.sales.JPanelTicketSales");
 
-    group = menu.addGroup("Menu.Main");
-    group.addPanel("/com/openbravo/images/mycomputer.png", "Menu.Ticket", "com.openbravo.pos.sales.JPanelTicketSales");
-    group.addPanel("/com/openbravo/images/mycomputer.png", "Menu.TicketEdit", "com.openbravo.pos.sales.JPanelTicketEdits");
-    group.addPanel("/com/openbravo/images/kdmconfig.png", "Menu.CustomersPayment", "com.openbravo.pos.customers.CustomersPayment");
-    group.addPanel("/com/openbravo/images/mycomputer.png", "Menu.Payments", "com.openbravo.pos.panels.JPanelPayments");
-    group.addPanel("/com/openbravo/images/mycomputer.png", "Menu.CloseTPV", "com.openbravo.pos.panels.JPanelCloseMoney");
-    group.addPanel("/com/openbravo/images/appointment.png", "Menu.Closing", "/com/openbravo/reports/closedpos.bs");
+    //CAIXA
+    group = menu.addGroup("Menu.Cash");
+    group.addPanel("/com/openbravo/images/editsales.png", "Menu.TicketEdit", "com.openbravo.pos.sales.JPanelTicketEdits");
+    group.addPanel("/com/openbravo/images/customerreceipt.png", "Menu.Payments", "com.openbravo.pos.customers.CustomersPayment");
+    group.addPanel("/com/openbravo/images/cashinout.png", "Menu.CashinCashou", "com.openbravo.pos.panels.JPanelPayments");
+    group.addPanel("/com/openbravo/images/closecash.png", "Menu.CloseTPV", "com.openbravo.pos.panels.JPanelCloseMoney");
 
     group = menu.addGroup("Menu.Backoffice");
     //CADASTROS
@@ -38,12 +41,27 @@
     submenucustomers = submenuregister.addSubmenu("/com/openbravo/images/contents.png", "Menu.CustomersManagement", "com.openbravo.pos.forms.MenuCustomersManagement");
     submenucustomers.addPanel("/com/openbravo/images/bookmark.png", "Menu.CustomerSupplierManagement", "com.openbravo.pos.customers.CustomersPanel");
     submenucustomers.addPanel("/com/openbravo/images/bookmark.png", "Menu.CompanyManagement", "com.openbravo.pos.customers.CompaniesPanel");
-    submenucustomers
+    
+    //cadastro de produtos
+     submenuproducts = submenuregister.addSubmenu("/com/openbravo/images/contents.png", "Menu.Products", "com.openbravo.pos.forms.MenuProductManagement");
+     submenuproducts.addPanel("/com/openbravo/images/bookmark.png", "Menu.Products", "com.openbravo.pos.inventory.ProductsPanel");
+     submenuproducts.addPanel("/com/openbravo/images/bookmark.png", "Menu.ProductsWarehouse", "com.openbravo.pos.inventory.ProductsWarehousePanel");
+     submenuproducts.addPanel("/com/openbravo/images/bookmark.png", "Menu.Auxiliar", "com.openbravo.pos.inventory.AuxiliarPanel");
+     submenuproducts.addPanel("/com/openbravo/images/bookmark.png", "Menu.Categories", "com.openbravo.pos.inventory.CategoriesPanel");
+     submenuproducts.addPanel("/com/openbravo/images/bookmark.png", "Menu.Attributes", "com.openbravo.pos.inventory.AttributesPanel");
+     submenuproducts.addPanel("/com/openbravo/images/bookmark.png", "Menu.AttributeValues", "com.openbravo.pos.inventory.AttributeValuesPanel");
+     submenuproducts.addPanel("/com/openbravo/images/bookmark.png", "Menu.AttributeSets", "com.openbravo.pos.inventory.AttributeSetsPanel");
+     submenuproducts.addPanel("/com/openbravo/images/bookmark.png", "Menu.AttributeUse", "com.openbravo.pos.inventory.AttributeUsePanel");
     
     //RELATORIOS
+    submenureport= group.addSubmenu("/com/openbravo/images/report.png", "Menu.Reports", "com.openbravo.pos.forms.MenuReportManagement");
+    submenureport.addPanel("/com/openbravo/images/appointment.png", "Menu.CustomersReport", "/com/openbravo/reports/customers.bs");
+    submenureport.addPanel("/com/openbravo/images/appointment.png", "Menu.CustomersBReport", "/com/openbravo/reports/customersb.bs");
+    submenureport.addPanel("/com/openbravo/images/appointment.png", "Menu.CustomersDiary", "/com/openbravo/reports/customersdiary.bs");
 
     group = menu.addGroup("Menu.System");
     group.addChangePasswordAction();
     group.addPanel("/com/openbravo/images/package_settings.png", "Menu.Configuration", "com.openbravo.pos.config.JPanelConfiguration");
+    group.addPanel("/com/openbravo/images/clipart.png", "Menu.Resources", "com.openbravo.pos.admin.ResourcesPanel");
     group.addPanel("/com/openbravo/images/fileprint.png", "Menu.Printer", "com.openbravo.pos.panels.JPanelPrinter");
     group.addExitAction();

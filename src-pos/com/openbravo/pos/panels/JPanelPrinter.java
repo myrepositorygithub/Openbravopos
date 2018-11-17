@@ -41,9 +41,9 @@ public class JPanelPrinter extends JPanel implements JPanelView {
         initComponents();
 
         
-        if (oApp.getDeviceTicket().getDeviceDisplay().getDisplayComponent() != null) {
-            m_jDisplay.add(oApp.getDeviceTicket().getDeviceDisplay().getDisplayComponent());
-        }     
+//        if (oApp.getDeviceTicket().getDeviceDisplay().getDisplayComponent() != null) {
+//            m_jDisplay.add(oApp.getDeviceTicket().getDeviceDisplay().getDisplayComponent());
+//        }     
         
         List<DevicePrinter> aprinters = oApp.getDeviceTicket().getDevicePrinterAll();
         for (int i = 0; i < aprinters.size(); i++) {   
