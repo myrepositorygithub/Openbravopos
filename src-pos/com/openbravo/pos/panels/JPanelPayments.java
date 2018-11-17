@@ -58,6 +58,6 @@ public class JPanelPayments extends JPanelTable {
     }
     
     public String getTitle() {
-        return AppLocal.getIntString("Menu.Payments");
+        return AppLocal.getIntString("Menu.CashinCashou");
     }    
 }
